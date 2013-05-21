@@ -10,7 +10,7 @@ cd temp_clone;
 git clone git://gitorious.tif.ti.com/glsdk/gst-ducati.git;
 cd gst-ducati;
 echo "applying patch";
-git apply ../rahul.patch;
+git apply ../../clone/gst-ducati/rahul.patch;
 echo "running autogen";
 ./autogen.sh --prefix=/usr;
 echo "start make and make_install";
