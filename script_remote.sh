@@ -1,2 +1,11 @@
-touch rahul_test.txt;
-echos "Hi Rahul" > rahul_test.txt;
+echo "start cloning";
+cd ;
+mkdir temp_clone;
+cd temp_clone;
+git clone git://gitorious.tif.ti.com/glsdk/gst-ducati.git;
+cd gst-ducati;
+./autogen.sh --prefix=/usr;
+echo "start make and make_install";
+make;
+make install;
+echo "finished";
