@@ -8,7 +8,7 @@ cd ;
 #mkdir temp_clone;
 cd temp_clone;
 #git clone git://gitorious.tif.ti.com/glsdk/gst-ducati.git;
-#cd gst-ducati;
+cd gst-ducati;
 #echo "applying patch";
 #git apply ../../clone/gst-ducati/rahul.patch;
 #echo "running autogen";
