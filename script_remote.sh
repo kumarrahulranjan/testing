@@ -14,6 +14,15 @@ cd temp_clone;
 #echo "running autogen";
 #./autogen.sh --prefix=/usr;
 echo "start make and make_install";
-make;
-make install;
+if make 
+then echo "successful make";
+else 
+exit $?;
+fi
+
+if make install
+then echo "successful make_install";
+else
+exit $?
+fi
 echo "----------------------------finished--------------------";
