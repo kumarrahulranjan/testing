@@ -1,28 +1,25 @@
+function error_exit
+{
+	echo "$1" 1>&2;
+	exit 1;
+}
+
 echo "start cloning";
 cd ;
-#if(ls | grep temp_clone) 
-#	then
-#	rm -rf temp_clone;
-#	echo "removing temp_clone";
-#fi
-#mkdir temp_clone;
-cd temp_clone;
-#git clone git://gitorious.tif.ti.com/glsdk/gst-ducati.git;
+if(ls | grep temp_clone) 
+	then
+	rm -rf temp_clone;
+	echo "removing temp_clone";
+fi
+mkdir temp_clone || error_exit "mkdir failed";
+cd temp_clone || error_exit "cd to temp_clone failed";
+git clone git://gitorious.tif.ti.com/glsdk/gst-ducati.git || error_exit "git clone failed";
 cd gst-ducati;
-#echo "applying patch";
+echo "applying patch";
 #git apply ../../clone/gst-ducati/rahul.patch;
 #echo "running autogen";
 #./autogen.sh --prefix=/usr;
-echo "start make and make_install";
-if make 
-then echo "successful make";
-else 
-exit $?;
-fi
+make || error_exit "make failed"; 
 
-if make install
-then echo "successful make_install";
-else
-exit $?
-fi
+make install || error_exit "make  install failed";
 echo "----------------------------finished--------------------";
