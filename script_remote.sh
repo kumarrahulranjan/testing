@@ -18,7 +18,7 @@ cd gst-ducati || error_exit "cd failed `pwd`";
 echo "applying patch";
 #git apply ../../clone/gst-ducati/rahul.patch;
 #echo "running autogen";
-#./autogen.sh --prefix=/usr;
+./autogen.sh --prefix=/usr || error_exit "autogen.sh failed";
 make || error_exit "make failed"; 
 
 make install || error_exit "make  install failed";
