@@ -4,7 +4,7 @@ function error_exit
 	exit 1;
 }
 
-echo "start cloning";
+#echo "start cloning";
 #cd ;
 #if(ls | grep temp_clone) 
 #	then
