@@ -13,7 +13,7 @@ if(ls | grep temp_clone)
 fi
 mkdir temp_clone || error_exit "mkdir failed";
 cd temp_clone || error_exit "cd to temp_clone failed";
-git clone git://gitorious.tif.ti.com/glsdk/gst-ducati.git || error_exit "git clone failed";
+git clone $1 || error_exit "git clone failed";
 cd gst-ducati || error_exit "cd failed `pwd`";
 echo "applying patch";
 git apply ~/rahul.patch || error_exit "failed to apply patch";
